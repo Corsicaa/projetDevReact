@@ -2,7 +2,7 @@
 
 ### What is Fiesta?
 
-Fiesta is an **__android__** application that allows you to create and manage events or party.
+Fiesta is an __android__ application that allows you to create and manage events or party.
 You can search for events near to your position and contact the creator of the event. 
 
 ***
