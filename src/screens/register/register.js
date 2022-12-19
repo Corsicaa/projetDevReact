@@ -20,7 +20,7 @@ const Register = ({ navigation }) => {
             alert('Password must be the same');
             return;
         }
-        navigation.navigate('Login');
+        navigation.navigate('Home');
     };
 
     return (
@@ -71,12 +71,13 @@ const SafeAreaViewStyled = styled.SafeAreaView`
   background-color: papayawhip;
   width: 100%;
   height: 100%;
+  align-items: center;
 `;
 
 const Welcome = styled.Text`
   font-size: 24px;
   text-align: center;
-  margin: 10px;
+  margin-top: 45%;
 `;
 
 const LoginButton = styled.TouchableOpacity`
@@ -90,14 +91,14 @@ const LoginButton = styled.TouchableOpacity`
 `;
 
 const TextInputContainer = styled.View`
-  margin: 10px;
+  margin: 15px;
 `;
 
 const TextInputStyled = styled.TextInput`
-  background-color: palevioletred;
+border: 2px solid palevioletred;
   padding: 12px;
-  border-radius: 12px;
-  color: white;
+  border-radius: 3px;
+  color: black;
 `;
 
 const LoginClick = styled.TouchableOpacity`
