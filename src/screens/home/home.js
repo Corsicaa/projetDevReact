@@ -3,6 +3,7 @@ import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Profile from '../profile/profile';
 import Search from '../search/search';
+import Events from '../events/events';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createBottomTabNavigator();
@@ -16,7 +17,7 @@ const Home = ({ navigation }) => {
                 tabBarLabelStyle: {
                     fontSize: 15,
                     fontWeight: 'bold',
-                  },
+                },
             }}>
             <Tab.Screen
                 name="Profile"
@@ -36,7 +37,18 @@ const Home = ({ navigation }) => {
                     tabBarLabel: 'Search',
                     headerShown: false,
                     tabBarIcon: () => (
-                        <MaterialCommunityIcons name="map-marker" color={"#db7093"} size={30} />
+                        <MaterialCommunityIcons name="party-popper" color={"#db7093"} size={30} />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="Events"
+                component={Events}
+                options={{
+                    tabBarLabel: 'Create Event',
+                    headerShown: false,
+                    tabBarIcon: () => (
+                        <MaterialCommunityIcons name="plus" color={"#db7093"} size={30} />
                     ),
                 }}
             />
