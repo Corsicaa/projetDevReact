@@ -9,7 +9,7 @@ You can search for events near to your position and contact the creator of the e
 
 ## First step (19/12/22)
 - [x] Login to the application
-- [ ] Page profile
+- [x] Page profile
 - [ ] Create your first event
 
 ***
