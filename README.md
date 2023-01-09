@@ -17,6 +17,3 @@ You can search for events near to your position and contact the creator of the e
 ## Second step (09/01/23)
 - [X] Search for events near to your position using your location on a map.
 - [ ] Contact the creator of the event
-
-## Bonus
- - [ ] Add a global chat to the event
