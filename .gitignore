@@ -65,4 +65,5 @@ buck-out/
 
 
 #others
-/fiestaStrapi
+/fiesta
+.env

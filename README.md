@@ -8,7 +8,7 @@ You can search for events near to your position and contact the creator of the e
 ***
 
 ## First step (19/12/22)
-- [x] Register and login to the application
+- [x] Login to the application
 - [ ] Create your profile
 - [ ] Create your first event
 

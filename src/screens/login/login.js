@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styled from 'styled-components';
+import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Login = ({ navigation }) => {
   const [username, setUsername] = React.useState('');
@@ -14,7 +16,21 @@ const Login = ({ navigation }) => {
       alert('Password must be at least 8 characters long');
       return;
     }
-    navigation.navigate('Home');
+    axios({
+      method: 'post',
+      url: 'https://login.hikkary.com/users/login',
+      data: {
+        username: username,
+        password: password,
+      },
+    })
+      .then(async response => {
+        await AsyncStorage.setItem('token', response.headers['x-access-token']);
+        navigation.navigate('Home');
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   return (
@@ -42,11 +58,6 @@ const Login = ({ navigation }) => {
           </LoginButton>
         </View>
       </View>
-      <View>
-        <RegisterClick onPress={() => navigation.navigate('Register')}>
-          <Text>Don't have an account ? Register here</Text>
-        </RegisterClick>
-      </View>
     </SafeAreaViewStyled>
   );
 };
@@ -62,6 +73,7 @@ const Welcome = styled.Text`
   font-size: 24px;
   text-align: center;
   margin-top: 50%;
+  fontFamily: "Caveat";
 `;
 
 const LoginButton = styled.TouchableOpacity`
@@ -84,10 +96,4 @@ const TextInputStyled = styled.TextInput`
   border-radius: 3px;
   color: black;
 `;
-
-const RegisterClick = styled.TouchableOpacity`
-  align-items: center;
-  margin-top: 20px;
-`;
-
 export default Login
